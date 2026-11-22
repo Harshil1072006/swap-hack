@@ -1,0 +1,13 @@
+services:
+  swap-hack:
+    build: .
+    ports:
+      - '127.0.0.1:8788:8787'
+    environment:
+      SWAP_ENV: local
+      LOCAL_AUTH_CODES: '1'
+      ADMIN_KEY: swap-hack-local-organizer
+    volumes:
+      - event-data:/app/.wrangler
+volumes:
+  event-data:
